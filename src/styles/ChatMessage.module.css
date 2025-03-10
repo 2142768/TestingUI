@@ -1,0 +1,64 @@
+.userMessageContainer,
+.aiMessageContainer {
+  margin-bottom: 20px;
+  padding: 0 12px;
+}
+
+.userMessageContainer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.userMessage {
+  max-width: 70%;
+  background: #f1fffd;
+  border-radius: var(--border-radius);
+  border: 1px solid #b5b5d1;
+  padding: 14px;
+  box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1);
+}
+
+.aiMessage {
+  max-width: 70%;
+  background: #f1f8ff;
+  border-radius: var(--border-radius);
+  border: 1px solid #8384f2;
+  padding: 14px;
+  box-shadow: 0px 1px 3px rgba(16, 24, 40, 0.1);
+}
+
+.messageHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.icon {
+  width: 20px;
+  height: 20px;
+}
+
+.name {
+  font-size: 18px;
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.aiName {
+  font-size: 18px;
+  font-weight: 500;
+  color: #4546d9;
+}
+
+.timestamp {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-left: auto;
+}
+
+.messageContent {
+  font-size: 16px;
+  line-height: 20px;
+  color: var(--text-primary);
+}

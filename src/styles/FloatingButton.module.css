@@ -1,0 +1,51 @@
+.floatingButton {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 20px;
+  background: var(--primary-color);
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0px 4px 8px rgba(16, 24, 40, 0.1);
+  transition: all 0.2s ease;
+  z-index: 100;
+  animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.floatingButton img {
+  width: 120px;
+  height: 32px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+}
+
+.floatingButton span {
+  font-size: 16px;
+  font-weight: 500;
+  color: white;
+  white-space: nowrap;
+}
+
+.floatingButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 6px 12px rgba(16, 24, 40, 0.15);
+  background-color: #0047b3;
+}
+
+@keyframes bounceIn {
+  from {
+    opacity: 0;
+    transform: scale(0.3) translateY(100px);
+  }
+  50% {
+    transform: scale(1.05) translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
