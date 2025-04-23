@@ -1,0 +1,63 @@
+{
+  "Reliable": {
+    "Data Quality & Preprocessing Compliance": [
+      "Are different data distributions tested to ensure the model performs consistently across demographics?If yes what demographics ?"   ],
+
+
+    "Model Robustness & Drift Detection": [
+      "Are adversarial attack simulations performed to test model resilience? explain which area needs more attention in your application",
+      "Are perturbation tests performed to check the sensitivity of model predictions? explain which area needs more attention in your application",
+
+      "Has testing Evaluating models on real-world datasets done, what are the shortcomings of the model you would like to highlight against which metrics.",
+
+      "Are explanations consistent across different AI model versions?"
+    ],
+    "Usage Monitoring & Assessments": [
+      "Regularly review and assess generative model user prompts to ensure usage remains aligned with intent. Please upload the regression test suite"
+    ]
+  },
+  "Secure": {
+    "Security & Privacy Risks": [
+      "Is all personally identifiable information (PII) redacted or anonymized before model ingestion?,If not what PII data are to be considered ?",
+      "Are there mechanisms to detect unauthorized access to AI training or inference logs?",
+      "Has the system been tested for prompt injection or adversarial attacks?",
+      "Are there Regularly check model outputs for copyrighted or sensitive data. if yes how is it done ?",
+      "how do you ensure models cannot be misappropriated or altered by malicious actors."
+    ]
+  },
+  "Fair & Human Centred":{  
+  "Bias & Fairness Governance": [
+      "Are models capable of handling for disparate impact across different gender, age, and racial groups?",
+      "Are fairness constraints applied during model training (e.g., equal opportunity constraints)?",
+      "Are counterfactual fairness tests performed to detect biased decision-making?, Give few examples",
+      "How does the AI system handle ambiguous or controversial content?"
+    ],
+    "Explainability & Human Oversight": [
+      "Can human moderators override AI outputs in high-risk scenarios?",
+      "Is there a feedback mechanism for users to report unfair AI outcomes?"
+    ],
+    "Risk Management for Social Harm": [
+      "Are guardrails in place to filter out hate speech, misinformation, or deepfakes?",
+      "Are model responses monitored for hallucinations and factually incorrect claims?"
+       ]
+  },
+  "Transparent & Explainable": {
+    "Data Lineage and Traceability": [
+      "Document all datasets used as foundations for models according to principles outlined in Datasheets for Datasets, including how the data was collected, whether it is representative of the population of interest, and with what intent it was collected.",
+      "Document the rationale for and steps taken toward data cleansing, transformation, or other feature engineering.",
+      "Document the rationale for using specific datasets and how new features should be used in downstream alternative pipelines."
+    ],
+    "Explainability and Interpretability": [
+      "Provide explanations where possible for new predictions from all deployed models.",
+      "Build dashboards that contextualize individual predictions against all training data and overall feature importance of the selected model.",
+      "Share these dashboards with end users."
+    ],
+    "Reporting & Enablement": [
+      "Document why a given model was selected before deployment, including rationale for any custom evaluation metrics built into the model.",
+      "Develop reporting that provides full documentation of the AI pipeline, all relevant decisions taken during the build, and steps taken as part of the responsible AI framework.",
+      "Provide clear guidelines on the uses and intended purposes of the AI system, as well as the limitations and edge cases for use.",
+      "Provide a mechanism for recourse or feedback if an end user is not satisfied with outcomes, and review this feedback in a consistent manner.",
+      "Clearly state when AI is used to produce outputs to end users, consumers, or other affected parties."
+    ]
+  }
+}
