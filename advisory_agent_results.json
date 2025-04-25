@@ -8,263 +8,829 @@
                 "law": "GDPR",
                 "article": "Article 5",
                 "title": "Principles relating to processing of personal data",
-                "description": "This article outlines the principles of data processing, including lawfulness, fairness, transparency, and purpose limitation.",
-                "reason": "The system processes personal data (call recordings and transcriptions), making adherence to these principles essential.",
+                "description": "Ensures data processing is lawful, fair, and transparent, which is critical for recording and transcribing calls.",
+                "reason": "The system processes personal data from calls, requiring adherence to principles of lawful and transparent processing.",
                 "applicability": "High",
-                "applicability_reason": "Non-compliance with these principles could lead to significant legal and reputational risks."
+                "applicability_reason": "Non-compliance could lead to significant legal and reputational risks."
             },
             {
                 "law": "GDPR",
                 "article": "Article 6",
                 "title": "Lawfulness of processing",
-                "description": "This article specifies the conditions under which personal data processing is lawful.",
-                "reason": "The system must ensure that call recordings and transcriptions are processed under a lawful basis, such as consent or legitimate interest.",
+                "description": "Defines conditions under which personal data processing is lawful.",
+                "reason": "Recording and transcribing calls must meet lawful processing conditions, such as consent or legitimate interest.",
                 "applicability": "High",
-                "applicability_reason": "Failure to establish a lawful basis for processing could result in severe penalties."
+                "applicability_reason": "Ensuring lawful processing is mandatory to avoid legal violations."
             },
             {
                 "law": "EUAI",
                 "article": "Article 9",
                 "title": "Transparency obligations for AI systems",
-                "description": "This article mandates that users are informed about the use of AI systems and their functionalities.",
-                "reason": "The system uses Generative AI, requiring clear communication to users about its role in processing and summarizing data.",
+                "description": "Mandates clear communication about AI system functionality and its decision-making processes.",
+                "reason": "Generative AI used for extracting key details must be transparent to users and stakeholders.",
                 "applicability": "Medium",
-                "applicability_reason": "Transparency enhances trust and compliance but is less critical than data protection principles."
+                "applicability_reason": "Transparency enhances trust but is not as critical as data protection laws."
             },
             {
                 "law": "EUAI",
                 "article": "Article 10",
-                "title": "Data governance and quality",
-                "description": "This article emphasizes the importance of high-quality datasets for AI systems to ensure accuracy and reliability.",
-                "reason": "The system relies on accurate transcription and data extraction, making data quality a key compliance factor.",
-                "applicability": "High",
-                "applicability_reason": "Poor data quality could compromise the system's functionality and lead to compliance issues."
+                "title": "Accountability for AI systems",
+                "description": "Requires mechanisms to ensure AI systems operate responsibly and comply with regulations.",
+                "reason": "The system's use of Generative AI must align with accountability standards to prevent misuse or errors.",
+                "applicability": "Medium",
+                "applicability_reason": "Accountability is important for ethical AI use but secondary to data protection compliance."
             }
         ],
         "metrices": [
             {
                 "metric_name": "Task Completion Rate (TCR)",
-                "metric_description": "Measures the percentage of calls successfully transcribed and summarized by the system.",
-                "validation_steps": "Verify if the system can transcribe and summarize calls accurately and completely for a set of test cases.",
-                "justification_reason": "Ensures the system effectively processes calls and provides accurate summaries, which is critical for supporting agents and customers.",
+                "metric_description": "Measures how effectively the system completes the task of recording, transcribing, and summarizing calls.",
+                "validation_steps": "Verify if the system successfully records calls, transcribes them accurately, and generates structured summaries.",
+                "justification_reason": "Ensures the system processes calls end-to-end and provides accurate summaries for agents and customers.",
                 "category": "Model Quality",
                 "category_reason": "This metric evaluates the system's ability to perform its core functionality effectively.",
                 "applicability": "High",
-                "applicability_reason": "Critical for ensuring the system meets its primary purpose of transcription and summarization.",
+                "applicability_reason": "Critical for ensuring the system fulfills its primary purpose.",
                 "Threshold_Impact": 0.9,
-                "threshold_reason": "A high threshold ensures the system consistently delivers accurate and reliable results."
+                "threshold_reason": "A high threshold ensures the system consistently performs its tasks effectively."
             },
             {
                 "metric_name": "Data Completeness Ratio (DCR)",
-                "metric_description": "Ensures all essential details (e.g., caller information, key points from conversations) are captured during transcription and summarization.",
-                "validation_steps": "Check if all critical details from a set of test calls are captured in the summaries.",
-                "justification_reason": "Helps avoid missing critical information that could impact the quality of summaries provided to agents and customers.",
+                "metric_description": "Ensures all necessary details (e.g., customer name, travel dates, destinations) are captured during transcription and summarization.",
+                "validation_steps": "Check if all required details are present in the summaries generated by the system.",
+                "justification_reason": "Helps avoid missing critical information that could lead to incomplete or inaccurate summaries.",
                 "category": "Model Quality",
-                "category_reason": "This metric ensures the system captures all necessary data for effective summarization.",
+                "category_reason": "This metric ensures the system captures all essential data for accurate summaries.",
                 "applicability": "High",
-                "applicability_reason": "Missing critical details could lead to incomplete or misleading summaries.",
+                "applicability_reason": "Missing details can significantly impact the usefulness of the summaries.",
                 "Threshold_Impact": 0.85,
-                "threshold_reason": "A high threshold ensures most critical details are captured accurately."
+                "threshold_reason": "Ensures the majority of critical details are captured accurately."
             },
             {
-                "metric_name": "Correctness/Factuality Rate",
-                "metric_description": "Verifies the accuracy of transcriptions and extracted details, ensuring summaries are error-free and reliable.",
-                "validation_steps": "Compare the transcriptions and summaries with the original call recordings for accuracy.",
-                "justification_reason": "Ensures the system delivers precise and trustworthy information to users.",
+                "metric_name": "Accuracy of Transcription",
+                "metric_description": "Evaluates how accurately the system transcribes spoken words into text.",
+                "validation_steps": "Compare transcriptions with the original audio recordings to assess accuracy.",
+                "justification_reason": "Ensures the transcription is precise, as errors could lead to incorrect summaries.",
                 "category": "Model Quality",
-                "category_reason": "This metric evaluates the factual accuracy of the system's outputs.",
+                "category_reason": "This metric directly impacts the quality of the summaries generated.",
                 "applicability": "High",
-                "applicability_reason": "Inaccurate summaries could lead to incorrect decisions by agents and customers.",
+                "applicability_reason": "Accurate transcription is essential for generating reliable summaries.",
                 "Threshold_Impact": 0.9,
-                "threshold_reason": "A high threshold ensures the system maintains a high level of accuracy."
+                "threshold_reason": "A high threshold ensures minimal transcription errors."
             },
             {
-                "metric_name": "Coverage Check",
-                "metric_description": "Evaluates how much of the call data is processed and summarized, ensuring no critical parts are missed.",
-                "validation_steps": "Analyze the summaries to ensure all parts of the call are represented.",
-                "justification_reason": "Guarantees comprehensive transcription and summarization of calls.",
+                "metric_name": "Key Detail Extraction Accuracy",
+                "metric_description": "Measures how well the system identifies and extracts important details from the transcribed calls.",
+                "validation_steps": "Validate extracted details against the original transcription to ensure accuracy.",
+                "justification_reason": "Ensures the extracted information is relevant and useful for agents and customers.",
                 "category": "Model Quality",
-                "category_reason": "This metric ensures the system processes all relevant data.",
+                "category_reason": "This metric ensures the system identifies and extracts critical information accurately.",
                 "applicability": "High",
-                "applicability_reason": "Missing parts of the call could lead to incomplete summaries.",
-                "Threshold_Impact": 0.9,
-                "threshold_reason": "A high threshold ensures comprehensive coverage of call data."
+                "applicability_reason": "Extracting key details is vital for the system's functionality.",
+                "Threshold_Impact": 0.85,
+                "threshold_reason": "Ensures most critical details are accurately extracted."
             },
             {
-                "metric_name": "Instruction Handling",
-                "metric_description": "Assesses how well the system adheres to user-defined instructions for summarizing calls.",
-                "validation_steps": "Provide specific instructions for summarization and verify if the system follows them.",
-                "justification_reason": "Ensures the system follows specific guidelines for generating structured summaries.",
+                "metric_name": "Summarization Quality",
+                "metric_description": "Assesses the clarity, conciseness, and relevance of the structured summaries generated by the system.",
+                "validation_steps": "Review summaries for clarity, conciseness, and relevance to the original call content.",
+                "justification_reason": "Ensures the summaries are easy to understand and meet the needs of agents and customers.",
                 "category": "Model Quality",
-                "category_reason": "This metric evaluates the system's ability to adapt to user-defined requirements.",
-                "applicability": "Medium",
-                "applicability_reason": "Important for customization but not critical for basic functionality.",
-                "Threshold_Impact": 0.8,
-                "threshold_reason": "A moderate threshold ensures the system can follow most instructions effectively."
+                "category_reason": "This metric evaluates the usability and effectiveness of the summaries.",
+                "applicability": "High",
+                "applicability_reason": "Poor summarization quality can reduce the system's usefulness.",
+                "Threshold_Impact": 0.85,
+                "threshold_reason": "Ensures summaries are consistently clear and relevant."
             },
             {
                 "metric_name": "Groundtruth Similarity",
-                "metric_description": "Compares the transcriptions and summaries generated by the system to expected outputs for accuracy.",
-                "validation_steps": "Compare the system's outputs with predefined ground truth data.",
-                "justification_reason": "Validates the system\u2019s ability to produce summaries that align with user expectations.",
+                "metric_description": "Compares the generated summaries with expected outputs to measure alignment.",
+                "validation_steps": "Compare system-generated summaries with predefined groundtruth summaries.",
+                "justification_reason": "Validates that the system produces summaries that match the intended outcomes.",
                 "category": "Model Quality",
-                "category_reason": "This metric ensures the system's outputs match expected results.",
+                "category_reason": "This metric ensures the system's outputs align with expected results.",
+                "applicability": "Medium",
+                "applicability_reason": "Alignment with groundtruth enhances reliability but is not critical for basic functionality.",
+                "Threshold_Impact": 0.8,
+                "threshold_reason": "Ensures reasonable alignment with expected outputs."
+            },
+            {
+                "metric_name": "Privacy Compliance Check",
+                "metric_description": "Ensures the system adheres to privacy laws like GDPR by protecting personal data during call recording and processing.",
+                "validation_steps": "Verify compliance with GDPR and other privacy regulations during data handling.",
+                "justification_reason": "Prevents legal and reputational risks by ensuring compliance with data protection regulations.",
+                "category": "Trustworthy",
+                "category_reason": "This metric ensures the system operates ethically and complies with legal standards.",
                 "applicability": "High",
-                "applicability_reason": "Critical for ensuring the system meets user expectations.",
-                "Threshold_Impact": 0.9,
-                "threshold_reason": "A high threshold ensures the system's outputs are highly accurate."
+                "applicability_reason": "Non-compliance can lead to severe legal and reputational consequences.",
+                "Threshold_Impact": 0.95,
+                "threshold_reason": "A high threshold ensures strict adherence to privacy laws."
             },
             {
                 "metric_name": "Security Data Exposure",
-                "metric_description": "Checks for any sensitive or personal data leaks in transcriptions or summaries.",
-                "validation_steps": "Analyze the outputs to ensure no sensitive or personal data is exposed.",
-                "justification_reason": "Ensures compliance with privacy laws and protects user data.",
+                "metric_description": "Checks for any sensitive or personal data leaks during transcription or summarization.",
+                "validation_steps": "Conduct security audits to detect potential data leaks.",
+                "justification_reason": "Protects customer data and ensures the system operates securely.",
                 "category": "Trustworthy",
-                "category_reason": "This metric evaluates the system's adherence to privacy and security standards.",
+                "category_reason": "This metric ensures the system maintains data security and user trust.",
                 "applicability": "High",
-                "applicability_reason": "Data leaks could lead to severe legal and reputational consequences.",
+                "applicability_reason": "Data leaks can severely impact user trust and legal compliance.",
                 "Threshold_Impact": 0.95,
-                "threshold_reason": "A very high threshold ensures minimal risk of data exposure."
+                "threshold_reason": "A high threshold ensures robust data security measures."
             },
             {
-                "metric_name": "Business Guidelines Compliance",
-                "metric_description": "Verifies that the system adheres to ethical guidelines, avoiding toxic or harmful content in summaries.",
-                "validation_steps": "Check the summaries for any content that violates ethical guidelines.",
-                "justification_reason": "Promotes trust and ensures the system operates within ethical boundaries.",
-                "category": "Trustworthy",
-                "category_reason": "This metric ensures the system's outputs align with ethical standards.",
-                "applicability": "Medium",
-                "applicability_reason": "Important for maintaining trust but not critical for basic functionality.",
-                "Threshold_Impact": 0.9,
-                "threshold_reason": "A high threshold ensures the system adheres to ethical standards."
-            },
-            {
-                "metric_name": "Goal Accuracy",
-                "metric_description": "Evaluates how well the system meets its functional goals of transcribing calls and generating structured summaries.",
-                "validation_steps": "Test the system's ability to transcribe and summarize calls accurately.",
-                "justification_reason": "Ensures the system fulfills its intended purpose effectively.",
+                "metric_name": "Instruction Handling",
+                "metric_description": "Evaluates how well the system follows specific instructions for transcription and summarization.",
+                "validation_steps": "Test the system with varied instructions and check adherence to guidelines.",
+                "justification_reason": "Ensures the system adheres to predefined rules and guidelines for processing calls.",
                 "category": "Model Quality",
-                "category_reason": "This metric evaluates the system's overall performance in achieving its goals.",
-                "applicability": "High",
-                "applicability_reason": "Critical for ensuring the system meets its primary objectives.",
-                "Threshold_Impact": 0.9,
-                "threshold_reason": "A high threshold ensures the system consistently meets its goals."
+                "category_reason": "This metric evaluates the system's ability to follow user instructions accurately.",
+                "applicability": "Medium",
+                "applicability_reason": "Adherence to instructions enhances functionality but is not critical for basic operations.",
+                "Threshold_Impact": 0.85,
+                "threshold_reason": "Ensures the system follows most instructions accurately."
             },
             {
-                "metric_name": "Privacy Impact Simulation",
-                "metric_description": "Simulates potential privacy risks to evaluate the system\u2019s ability to protect sensitive data.",
-                "validation_steps": "Conduct simulated attacks to test the system's privacy safeguards.",
-                "justification_reason": "Ensures compliance with privacy regulations and safeguards user information.",
-                "category": "Trustworthy",
-                "category_reason": "This metric evaluates the system's ability to protect user privacy.",
+                "metric_name": "Scalability",
+                "metric_description": "Assesses the system's ability to handle an increasing number of calls without performance degradation.",
+                "validation_steps": "Simulate high call volumes and monitor system performance.",
+                "justification_reason": "Ensures the system can manage high call volumes during peak times.",
+                "category": "Model Quality",
+                "category_reason": "This metric evaluates the system's ability to scale effectively.",
                 "applicability": "High",
-                "applicability_reason": "Critical for ensuring compliance with privacy laws and protecting user data.",
-                "Threshold_Impact": 0.95,
-                "threshold_reason": "A very high threshold ensures robust privacy protection."
+                "applicability_reason": "Scalability is critical for handling peak usage scenarios.",
+                "Threshold_Impact": 0.9,
+                "threshold_reason": "A high threshold ensures the system performs well under load."
             }
         ],
         "augmentations": [
             {
                 "augment_name": "Background Noise",
-                "augment_description": "Add environmental noise, such as chatter, traffic, or office sounds, to simulate real-world audio conditions.",
+                "augment_description": "Add environmental noise, such as chatter, traffic, or office sounds, to simulate real-world audio conditions during call recordings.",
                 "augment_example": [
                     "Original: Hello, I\u2019d like to book a flight to Paris for next week.",
-                    "Augmented: Hello, I\u2019d like to book a flight to Paris for next week. [Background noise: office chatter]",
-                    "Parameter: Added office chatter noise to simulate real-world conditions."
+                    "Augmented: Hello, I\u2019d like to book a flight to Paris for next week. [Background noise: chatter and typing sounds]",
+                    "Parameter: Added office noise to simulate real-world conditions."
                 ],
-                "justification_reason": "Travel agency calls often occur in noisy environments. Testing with background noise ensures the system can accurately transcribe and extract key details despite distractions.",
+                "justification_reason": "Travel agency calls often occur in noisy environments, and this augmentation ensures the system can accurately transcribe and extract key details despite distractions.",
                 "applicability": "High",
-                "applicability_reason": "Background noise is critical for simulating real-world conditions and ensuring transcription accuracy in noisy environments."
+                "applicability_reason": "Background noise is a common real-world scenario, and testing with it is critical for transcription accuracy."
             },
             {
                 "augment_name": "Slow & Fast Speech",
-                "augment_description": "Alter the speed of speech, either slowing it down or speeding it up, to test transcription accuracy under varied speaking rates.",
+                "augment_description": "Alter the speed of speech, either slowing it down or speeding it up, to test transcription accuracy under varying speaking rates.",
                 "augment_example": [
-                    "Original: I need a ticket to New York, please.",
-                    "Augmented: I need a ticket to New York, please. (spoken at 1.5x speed)",
-                    "Parameter: Increased speech rate to simulate fast-paced customer interaction."
+                    "Original: I need to cancel my flight to New York.",
+                    "Augmented: I neeeeed to caaaancel my flight to New York. (Slow speech)",
+                    "Parameter: Adjusted speech rate to simulate slow speaking."
                 ],
-                "justification_reason": "Customers may speak quickly during busy periods or slowly when explaining complex requests. This ensures the system can handle diverse speech patterns effectively.",
+                "justification_reason": "Customers may speak quickly or slowly depending on urgency or clarity. Testing with varied speech speeds ensures the system can handle diverse speaking patterns.",
                 "applicability": "High",
-                "applicability_reason": "Speech rate variations are essential for testing the system's ability to handle diverse customer interactions."
+                "applicability_reason": "Speech rate variations are common in customer interactions, making this augmentation essential for robust transcription."
             },
             {
                 "augment_name": "Pauses (Sentence, Word, Random)",
-                "augment_description": "Insert pauses at different points (sentence, word, or random) to simulate natural speech rhythms or hesitations.",
+                "augment_description": "Insert pauses at different points (sentence, word, or random) to simulate natural speech rhythms and hesitations.",
                 "augment_example": [
-                    "Original: I\u2019d like to book a flight to London.",
-                    "Augmented: I\u2019d like to... book a flight to London.",
-                    "Parameter: Added a pause after 'to' to simulate hesitation."
+                    "Original: I want to book a flight to London.",
+                    "Augmented: I want to... book a flight... to London.",
+                    "Parameter: Added pauses to simulate natural hesitations."
                 ],
-                "justification_reason": "Customers may pause while thinking or clarifying their requests. Testing with pauses ensures the system can handle incomplete or fragmented speech effectively.",
+                "justification_reason": "Callers often pause while thinking or searching for information. Testing with pauses ensures the system can handle incomplete or fragmented speech.",
                 "applicability": "High",
-                "applicability_reason": "Pauses are common in natural speech and critical for testing the system's ability to handle fragmented or incomplete inputs."
+                "applicability_reason": "Pauses are a natural part of human speech, and handling them effectively is critical for accurate transcription."
             },
             {
                 "augment_name": "Low & High Pitch",
-                "augment_description": "Change the tone of speech, either raising or lowering the pitch, to test transcription accuracy across varied vocal ranges.",
+                "augment_description": "Change the tone of speech, either raising or lowering the pitch, to test transcription accuracy across different vocal ranges.",
                 "augment_example": [
-                    "Original: Can you help me with my booking?",
-                    "Augmented: Can you help me with my booking? (spoken in a higher pitch)",
+                    "Original: Can you check my flight status?",
+                    "Augmented: Can you check my flight status? (High-pitched voice)",
                     "Parameter: Increased pitch to simulate a higher vocal tone."
                 ],
-                "justification_reason": "Customers may have different vocal tones, and testing with pitch variations ensures the system can accurately transcribe calls regardless of voice characteristics.",
+                "justification_reason": "Callers may have varying vocal tones due to age, gender, or emotional state. Testing with pitch variations ensures the system can accurately transcribe diverse voices.",
                 "applicability": "Medium",
-                "applicability_reason": "Pitch variations are moderately relevant for ensuring transcription accuracy across diverse vocal ranges."
+                "applicability_reason": "While pitch variations are less frequent than other factors, they are still important for inclusivity and accuracy."
             },
             {
                 "augment_name": "Time Mask",
                 "augment_description": "Temporarily mute parts of the audio to simulate missing sections or gaps in speech.",
                 "augment_example": [
-                    "Original: I need a flight to Tokyo on Friday.",
-                    "Augmented: I need a flight to [silence] on Friday.",
-                    "Parameter: Muted 'Tokyo' to simulate missing audio."
+                    "Original: I need to change my booking to next Friday.",
+                    "Augmented: I need to [mute] my booking to next Friday.",
+                    "Parameter: Muted a portion of the audio to simulate missing data."
                 ],
-                "justification_reason": "Call recordings may have interruptions or missing audio due to technical issues. Testing with time masking ensures the system can handle incomplete data and still extract key details.",
+                "justification_reason": "Call recordings may have interruptions or missing audio due to technical issues or background interference. Testing with time masks ensures the system can handle incomplete data.",
                 "applicability": "High",
-                "applicability_reason": "Handling missing audio is critical for ensuring the system's robustness in real-world scenarios."
-            },
-            {
-                "augment_name": "Dialects",
-                "augment_description": "Modify speech to simulate different regional accents or variations in pronunciation.",
-                "augment_example": [
-                    "Original: I\u2019d like to book a flight to Sydney.",
-                    "Augmented: Oi\u2019d loike to book a flight to Sydney. (Australian accent)",
-                    "Parameter: Applied Australian dialect to simulate regional variation."
-                ],
-                "justification_reason": "Customers from diverse regions may have unique accents. Testing with dialects ensures the system can accurately transcribe calls regardless of pronunciation differences.",
-                "applicability": "High",
-                "applicability_reason": "Accents and dialects are critical for ensuring the system's inclusivity and accuracy across diverse customer bases."
+                "applicability_reason": "Handling missing audio is critical for ensuring the system's reliability in real-world scenarios."
             },
             {
                 "augment_name": "Induce PII",
                 "augment_description": "Include personally identifiable information (PII) in the text to assess privacy and security risks.",
                 "augment_example": [
-                    "Original: I need to book a flight for John Doe.",
-                    "Augmented: I need to book a flight for John Doe, phone number 123-456-7890.",
+                    "Original: I\u2019d like to book a flight to Paris.",
+                    "Augmented: I\u2019d like to book a flight to Paris. My passport number is 123456789.",
                     "Parameter: Added PII to test privacy compliance."
                 ],
-                "justification_reason": "Travel agency calls often involve sensitive data like names, phone numbers, and payment details. Testing with PII ensures the system adheres to privacy regulations and handles sensitive information securely.",
+                "justification_reason": "Travel agency calls often involve sensitive data like names, passport numbers, and payment details. Testing with PII ensures the system complies with data protection laws like GDPR.",
                 "applicability": "High",
-                "applicability_reason": "PII handling is critical for compliance with privacy regulations and ensuring secure data processing."
+                "applicability_reason": "PII is a critical aspect of travel agency calls, and ensuring compliance with privacy laws is mandatory."
+            },
+            {
+                "augment_name": "Gaussian Noise",
+                "augment_description": "Add random noise to the audio to simulate poor recording quality or interference.",
+                "augment_example": [
+                    "Original: Can you confirm my flight details?",
+                    "Augmented: Can you confirm my flight details? [Static noise]",
+                    "Parameter: Added Gaussian noise to simulate poor audio quality."
+                ],
+                "justification_reason": "Call recordings may suffer from technical issues like static or distortion. Testing with Gaussian noise ensures the system can transcribe accurately under such conditions.",
+                "applicability": "High",
+                "applicability_reason": "Poor audio quality is a common issue in real-world scenarios, making this augmentation essential for robust system performance."
             }
         ],
         "fast_principles": [
             {
                 "principle_name": "Fair & Inclusive - Minimize biases",
                 "principle_desc": "Take steps to identify and address risks of inequities, unacceptable biases, or lack of inclusivity in AI systems.",
-                "principle_guide": "Ensure the dataset is representative, reliable, and relevant, excluding discriminatory features. Identify and analyze protected characteristics for bias assessment and prevention.",
-                "principle_reason": "The AI system processes customer calls and generates summaries, which could inadvertently introduce biases if the dataset or algorithm is not inclusive. Addressing biases ensures equitable treatment of diverse customer groups.",
+                "principle_guide": "Ensure the dataset is representative, reliable, and relevant, excluding discriminatory features.",
+                "principle_reason": "The system processes customer calls, which may involve diverse accents, languages, or cultural nuances. Ensuring the dataset is representative and free from biases is critical to avoid unfair treatment or misinterpretation of customer inputs.",
                 "applicability": "High",
-                "applicability_reason": "Biases in the dataset or algorithm could lead to unfair outcomes, impacting customer trust and satisfaction. Ensuring fairness is critical for the system's reliability and ethical compliance."
+                "applicability_reason": "Bias in transcription or summarization could lead to miscommunication, negatively impacting customer experience and trust. Addressing biases is essential for equitable outcomes."
             },
             {
-                "principle_name": "Fair & Inclusive - Promote inclusivity and accessibility",
-                "principle_desc": "Design the AI system to be accessible and beneficial to a wide range of users, including those with disabilities or diverse cultural and socioeconomic backgrounds.",
-                "principle_guide": "Ensure the AI system is compliant with applicable accessibility guidelines. Conduct usability testing with diverse user groups to identify and address accessibility barriers.",
-                "principle_reason": "The AI system must cater to a diverse customer base, including individuals with disabilities or varying cultural backgrounds. Promoting inclusivity ensures the system is accessible and beneficial to all users.",
+                "principle_name": "Safe, Secure & Privacy Enhancement - Design for safety, security, and privacy",
+                "principle_desc": "Safety, security, and privacy risks should be considered throughout the AI lifecycle with appropriate controls and measures implemented.",
+                "principle_guide": "Utilize privacy-by-design best practices to guide data management activities.",
+                "principle_reason": "The system handles sensitive customer data during call transcription and summarization. Privacy-by-design ensures that personal information is protected and used responsibly.",
+                "applicability": "High",
+                "applicability_reason": "Handling sensitive customer data without robust privacy measures could lead to data breaches or misuse, significantly impacting customer trust and regulatory compliance."
+            },
+            {
+                "principle_name": "Transparent & Explainable - Design for transparency",
+                "principle_desc": "Design features with default disclosures to provide clarity and control for a better user experience.",
+                "principle_guide": "Incorporate UX design features that communicate system limitations to the end-user as well as affected users.",
+                "principle_reason": "Transparency is essential to help agents and customers understand the system's capabilities and limitations, ensuring trust and effective use of the summaries provided.",
                 "applicability": "Medium",
-                "applicability_reason": "While inclusivity enhances user experience and broadens the system's reach, it is not as critical as addressing biases, which directly impact fairness and ethical compliance."
+                "applicability_reason": "While transparency enhances user trust and experience, its absence may not critically impact the system's core functionality but could lead to misunderstandings or reduced user satisfaction."
+            }
+        ]
+    },
+    {
+        "question_no": 6,
+        "question": "Is it a voice/text chat?",
+        "answer": "It is an unstructured plain text interaction where queries are typed on a web interface.",
+        "article_laws": [
+            {
+                "law": "GDPR",
+                "article": "Article 4",
+                "title": "Definitions",
+                "description": "Defines 'personal data' and 'processing', which are relevant for unstructured text interactions.",
+                "reason": "Understanding the definitions ensures compliance when handling unstructured text data.",
+                "applicability": "High",
+                "applicability_reason": "Critical for identifying and processing personal data in text interactions."
+            },
+            {
+                "law": "GDPR",
+                "article": "Article 5",
+                "title": "Principles relating to processing of personal data",
+                "description": "Outlines principles like data minimization and accuracy, applicable to unstructured text data.",
+                "reason": "Ensures that unstructured text data is processed lawfully and transparently.",
+                "applicability": "High",
+                "applicability_reason": "Mandatory for lawful processing of text-based user interactions."
+            },
+            {
+                "law": "EUAI",
+                "article": "Article 9",
+                "title": "Transparency obligations",
+                "description": "Requires clear communication about AI systems handling text-based interactions.",
+                "reason": "Ensures users are informed about the AI's role in processing their text queries.",
+                "applicability": "Medium",
+                "applicability_reason": "Important for user trust but not directly critical to functionality."
+            },
+            {
+                "law": "EUAI",
+                "article": "Article 10",
+                "title": "Data governance and management",
+                "description": "Focuses on proper management of data used in AI systems, including unstructured text data.",
+                "reason": "Ensures responsible handling and governance of text data in AI systems.",
+                "applicability": "High",
+                "applicability_reason": "Essential for compliance and ethical management of text data."
+            }
+        ],
+        "metrices": [
+            {
+                "metric_name": "Coverage Check",
+                "metric_description": "Verifies how much of the test data is available and ensures it is balanced with the subject matter expert (SME)-provided test data spread.",
+                "validation_steps": "Ensure that the test data covers all possible scenarios of unstructured text interactions, including edge cases and common use cases.",
+                "justification_reason": "This metric ensures that the system is tested comprehensively for handling unstructured text interactions, avoiding gaps in test coverage.",
+                "category": "Model Quality",
+                "category_reason": "This metric evaluates the system's ability to handle diverse test cases, ensuring robustness.",
+                "applicability": "High",
+                "applicability_reason": "Comprehensive test coverage is critical to ensure the system performs reliably across all scenarios.",
+                "Threshold_Impact": 0.9,
+                "threshold_reason": "A high threshold ensures that most scenarios are covered, leaving minimal room for untested cases."
+            },
+            {
+                "metric_name": "Instruction Handling",
+                "metric_description": "Assesses how well the system adheres to the instructions provided in the user prompt.",
+                "validation_steps": "Test the system with various prompts and verify if the responses align with the instructions provided.",
+                "justification_reason": "This metric ensures that the system processes user queries accurately and follows the intended instructions in text-based interactions.",
+                "category": "Model Quality",
+                "category_reason": "This metric evaluates the system's ability to follow user instructions, ensuring functional accuracy.",
+                "applicability": "High",
+                "applicability_reason": "Adherence to user instructions is essential for the system's usability and reliability.",
+                "Threshold_Impact": 0.85,
+                "threshold_reason": "A high threshold ensures that the system consistently follows user instructions with minimal errors."
+            },
+            {
+                "metric_name": "Groundtruth Similarity",
+                "metric_description": "Cross-checks the similarity between the expected and actual responses.",
+                "validation_steps": "Compare the system's responses with the expected outcomes using similarity metrics like cosine similarity or BLEU scores.",
+                "justification_reason": "This metric ensures that the system's responses align with the expected outcomes, maintaining accuracy in unstructured text interactions.",
+                "category": "Model Quality",
+                "category_reason": "This metric evaluates the accuracy of the system's responses, ensuring they meet user expectations.",
+                "applicability": "High",
+                "applicability_reason": "Accurate responses are critical for maintaining user trust and system reliability.",
+                "Threshold_Impact": 0.8,
+                "threshold_reason": "A high threshold ensures that the system's responses are closely aligned with the expected outcomes."
+            },
+            {
+                "metric_name": "Reverse Engineering",
+                "metric_description": "Frames a user prompt based on the system's output and compares it with the original prompt to check for alignment.",
+                "validation_steps": "Generate a prompt from the system's output and compare it with the original user prompt for consistency.",
+                "justification_reason": "This metric validates that the system's output is consistent with the user's input and intent.",
+                "category": "Model Quality",
+                "category_reason": "This metric ensures that the system's responses are aligned with the user's intent, maintaining coherence.",
+                "applicability": "Medium",
+                "applicability_reason": "While important, minor inconsistencies may not significantly impact the overall functionality.",
+                "Threshold_Impact": 0.75,
+                "threshold_reason": "A moderate threshold ensures reasonable alignment without being overly restrictive."
+            },
+            {
+                "metric_name": "Security Data Exposure",
+                "metric_description": "Checks for any unethical leaks, such as sensitive data or organizational information, in the system's output.",
+                "validation_steps": "Analyze the system's responses to ensure no sensitive or unethical information is exposed.",
+                "justification_reason": "This metric protects user privacy and ensures compliance with data protection regulations during text-based interactions.",
+                "category": "Trustworthy",
+                "category_reason": "This metric ensures ethical behavior and compliance with privacy laws.",
+                "applicability": "High",
+                "applicability_reason": "Preventing sensitive data exposure is critical for user trust and legal compliance.",
+                "Threshold_Impact": 0.95,
+                "threshold_reason": "A very high threshold is necessary to ensure no sensitive information is leaked."
+            },
+            {
+                "metric_name": "Business Guidelines",
+                "metric_description": "Ensures that the system adheres to ethical guidelines, avoiding toxic or inappropriate language.",
+                "validation_steps": "Test the system with various prompts to ensure responses are professional and free from toxic language.",
+                "justification_reason": "This metric maintains professionalism and user trust in the system's responses.",
+                "category": "Trustworthy",
+                "category_reason": "This metric ensures the system's responses align with ethical and professional standards.",
+                "applicability": "High",
+                "applicability_reason": "Adherence to ethical guidelines is essential for maintaining user trust and system credibility.",
+                "Threshold_Impact": 0.9,
+                "threshold_reason": "A high threshold ensures that the system consistently avoids inappropriate language."
+            },
+            {
+                "metric_name": "Conciseness of Output",
+                "metric_description": "Evaluates if the system's responses are concise and to the point.",
+                "validation_steps": "Analyze the system's responses to ensure they are not overly verbose and directly address the user's query.",
+                "justification_reason": "This metric ensures that the system avoids unnecessary elaboration, making responses more user-friendly.",
+                "category": "Model Quality",
+                "category_reason": "This metric evaluates the clarity and efficiency of the system's responses.",
+                "applicability": "Medium",
+                "applicability_reason": "Concise responses improve user experience but are not critical for functionality.",
+                "Threshold_Impact": 0.8,
+                "threshold_reason": "A moderate threshold ensures responses are concise without omitting important details."
+            },
+            {
+                "metric_name": "Language Check",
+                "metric_description": "Grades the language quality of the system's responses.",
+                "validation_steps": "Review the system's responses for grammatical correctness and clarity.",
+                "justification_reason": "This metric ensures that the system uses clear and grammatically correct language in its responses.",
+                "category": "Model Quality",
+                "category_reason": "This metric evaluates the readability and professionalism of the system's responses.",
+                "applicability": "High",
+                "applicability_reason": "Clear and correct language is essential for effective communication with users.",
+                "Threshold_Impact": 0.85,
+                "threshold_reason": "A high threshold ensures that the system consistently produces grammatically correct and clear responses."
+            }
+        ],
+        "augmentations": [
+            {
+                "augment_name": "Paraphrase",
+                "augment_description": "Rewrite the text using different wording while preserving the original meaning.",
+                "augment_example": [
+                    "Original: It is an unstructured plain text interaction where queries are typed on a web interface.",
+                    "Augmented: Users interact with the system by typing queries in plain text on a web-based interface.",
+                    "Parameter: Applied sentence restructuring to create semantic variation."
+                ],
+                "justification_reason": "This augmentation ensures the system can handle variations in phrasing, which is common in user queries.",
+                "applicability": "High",
+                "applicability_reason": "Critical for testing the system's ability to understand diverse user inputs and align with the suggestion to expand test data coverage."
+            },
+            {
+                "augment_name": "Synonym Replacement",
+                "augment_description": "Substitute words with synonyms to vary the vocabulary and meaning.",
+                "augment_example": [
+                    "Original: It is an unstructured plain text interaction where queries are typed on a web interface.",
+                    "Augmented: It is a free-form text interaction where questions are entered on an online platform.",
+                    "Parameter: Replaced 'unstructured' with 'free-form' and 'web interface' with 'online platform.'"
+                ],
+                "justification_reason": "This tests the system's ability to understand synonymous terms, ensuring robustness in text-based interactions.",
+                "applicability": "High",
+                "applicability_reason": "Highly relevant for testing vocabulary diversity and aligning with the suggestion to enhance coverage of critical entities."
+            },
+            {
+                "augment_name": "Negation",
+                "augment_description": "Introduce negative terms to reverse the meaning of a statement, creating contrasting responses.",
+                "augment_example": [
+                    "Original: It is an unstructured plain text interaction where queries are typed on a web interface.",
+                    "Augmented: It is not a structured text interaction, and queries are not spoken but typed on a web interface.",
+                    "Parameter: Added negation to test the system's ability to interpret reversed meanings."
+                ],
+                "justification_reason": "This ensures the system can handle negated statements, which are common in user queries.",
+                "applicability": "Medium",
+                "applicability_reason": "Moderately relevant for testing edge cases but less critical for expanding coverage of underrepresented entities."
+            },
+            {
+                "augment_name": "Induce Confusion",
+                "augment_description": "Generate ambiguous or unclear text to introduce uncertainty or misinterpretation.",
+                "augment_example": [
+                    "Original: It is an unstructured plain text interaction where queries are typed on a web interface.",
+                    "Augmented: It might be a text interaction, but sometimes it feels like it could be structured or unstructured.",
+                    "Parameter: Introduced ambiguity by mixing structured and unstructured terms."
+                ],
+                "justification_reason": "This tests the system's ability to clarify and resolve ambiguous user inputs.",
+                "applicability": "Medium",
+                "applicability_reason": "Moderately relevant for testing system robustness but less critical for the primary use case."
+            },
+            {
+                "augment_name": "Broken English",
+                "augment_description": "Generate text with non-standard grammar or syntax, simulating language barriers or informal speech.",
+                "augment_example": [
+                    "Original: It is an unstructured plain text interaction where queries are typed on a web interface.",
+                    "Augmented: It unstructured text interaction, queries type on web interface.",
+                    "Parameter: Removed articles and adjusted syntax to simulate broken English."
+                ],
+                "justification_reason": "This ensures the system can handle grammatically incorrect or informal user inputs effectively.",
+                "applicability": "High",
+                "applicability_reason": "Critical for testing the system's ability to handle diverse linguistic inputs, aligning with the suggestion to expand test data coverage."
+            },
+            {
+                "augment_name": "Repetition",
+                "augment_description": "Repeat certain words or phrases to simulate redundancy.",
+                "augment_example": [
+                    "Original: It is an unstructured plain text interaction where queries are typed on a web interface.",
+                    "Augmented: It is an unstructured, unstructured plain text interaction where queries are typed on a web interface.",
+                    "Parameter: Introduced word duplication to simulate redundancy-based noise."
+                ],
+                "justification_reason": "This tests the system's ability to handle repetitive user inputs.",
+                "applicability": "Medium",
+                "applicability_reason": "Moderately relevant for testing redundancy handling but less critical for the primary use case."
+            },
+            {
+                "augment_name": "Word, Context Deletion",
+                "augment_description": "Delete words or context to introduce ambiguity or remove critical information.",
+                "augment_example": [
+                    "Original: It is an unstructured plain text interaction where queries are typed on a web interface.",
+                    "Augmented: It is an unstructured interaction where queries are typed.",
+                    "Parameter: Removed 'plain text' and 'web interface' to test system response to incomplete inputs."
+                ],
+                "justification_reason": "This ensures the system can infer missing context and provide accurate responses.",
+                "applicability": "High",
+                "applicability_reason": "Highly relevant for testing the system's ability to handle incomplete inputs, aligning with the suggestion to expand test data coverage."
+            }
+        ],
+        "fast_principles": [
+            {
+                "principle_name": "Fair & Inclusive - Engage diverse perspectives",
+                "principle_desc": "Incorporate diverse perspectives to proactively identify and address biases.",
+                "principle_guide": "Engage diverse stakeholders during product design, development, UAT, and production.",
+                "principle_reason": "Engaging diverse perspectives ensures that biases are identified and mitigated early in the development process, promoting fairness and inclusivity.",
+                "applicability": "High",
+                "applicability_reason": "Biases in AI systems can lead to unfair outcomes, making it critical to engage diverse perspectives to ensure equitable treatment across all user groups."
+            }
+        ]
+    },
+    {
+        "question_no": 7,
+        "question": "What problem it aims to solve?",
+        "answer": "The system eliminates manual effort in summarizing calls, improves response time, and ensures accurate documentation of customer requests.",
+        "article_laws": [
+            {
+                "law": "GDPR",
+                "article": "Article 5",
+                "title": "Principles relating to processing of personal data",
+                "description": "Ensures accuracy and accountability in processing customer data, aligning with the system's goal of accurate documentation.",
+                "reason": "The system's focus on accurate documentation directly supports GDPR's principle of data accuracy.",
+                "applicability": "High",
+                "applicability_reason": "Accuracy in data processing is critical for compliance and avoiding legal penalties under GDPR."
+            },
+            {
+                "law": "GDPR",
+                "article": "Article 25",
+                "title": "Data protection by design and by default",
+                "description": "Mandates systems to integrate data protection measures, aligning with the system's automated and accurate documentation features.",
+                "reason": "The system's automation ensures compliance with GDPR's requirement for data protection by design.",
+                "applicability": "High",
+                "applicability_reason": "Mandatory for ensuring compliance with GDPR and avoiding risks related to improper data handling."
+            },
+            {
+                "law": "EUAI",
+                "article": "Article 9",
+                "title": "Risk management system",
+                "description": "Requires AI systems to manage risks, aligning with the system's ability to improve response time and ensure accurate documentation.",
+                "reason": "The system's features mitigate risks associated with manual errors and delays, supporting compliance with this article.",
+                "applicability": "Medium",
+                "applicability_reason": "Important for ensuring the system's reliability and compliance with AI risk management standards."
+            },
+            {
+                "law": "EUAI",
+                "article": "Article 13",
+                "title": "Transparency obligations",
+                "description": "Mandates clear documentation and transparency in AI systems, aligning with the system's accurate documentation of customer requests.",
+                "reason": "The system's accurate documentation supports transparency, a key requirement under this article.",
+                "applicability": "Medium",
+                "applicability_reason": "Enhances trust and compliance but is not as critical as risk management or data protection."
+            }
+        ],
+        "metrices": [
+            {
+                "metric_name": "Task Automation Efficiency",
+                "metric_description": "Measures how effectively the system automates call summarization tasks, reducing manual effort.",
+                "validation_steps": "Test the system by comparing the time and effort required for manual call summarization versus automated summarization.",
+                "justification_reason": "This metric ensures the system is achieving its goal of eliminating manual work, making processes faster and more efficient.",
+                "category": "Model Quality",
+                "category_reason": "This metric evaluates the system's performance in automating tasks, which directly impacts its functionality.",
+                "applicability": "High",
+                "applicability_reason": "Critical for ensuring the system meets its primary goal of automation.",
+                "Threshold_Impact": 0.9,
+                "threshold_reason": "A high threshold ensures significant reduction in manual effort, validating the system's efficiency."
+            },
+            {
+                "metric_name": "Response Time Improvement",
+                "metric_description": "Tracks the reduction in time taken to respond to customer requests compared to manual processes.",
+                "validation_steps": "Measure the average response time for customer requests before and after implementing the system.",
+                "justification_reason": "This metric validates the system's ability to improve response times, which is a key goal.",
+                "category": "Model Quality",
+                "category_reason": "This metric assesses the system's ability to enhance operational efficiency.",
+                "applicability": "High",
+                "applicability_reason": "Essential for ensuring the system delivers faster responses, improving user experience.",
+                "Threshold_Impact": 0.85,
+                "threshold_reason": "A high threshold ensures noticeable improvement in response times."
+            },
+            {
+                "metric_name": "Accuracy of Documentation",
+                "metric_description": "Evaluates the precision and correctness of customer request documentation generated by the system.",
+                "validation_steps": "Compare system-generated documentation with actual customer requests to check for errors or omissions.",
+                "justification_reason": "Ensures the system meets its goal of providing accurate records, which is critical for customer satisfaction and compliance.",
+                "category": "Model Quality",
+                "category_reason": "This metric measures the correctness of the system's outputs, ensuring reliability.",
+                "applicability": "High",
+                "applicability_reason": "Accuracy is vital for compliance and maintaining trust with users.",
+                "Threshold_Impact": 0.95,
+                "threshold_reason": "A high threshold ensures minimal errors, maintaining the integrity of documentation."
+            },
+            {
+                "metric_name": "Error Reduction Rate",
+                "metric_description": "Measures the decrease in errors in call summaries and documentation compared to manual efforts.",
+                "validation_steps": "Track the number of errors in summaries before and after using the system.",
+                "justification_reason": "This metric highlights the system's ability to minimize mistakes, ensuring reliability.",
+                "category": "Model Quality",
+                "category_reason": "This metric evaluates the system's ability to produce error-free outputs.",
+                "applicability": "High",
+                "applicability_reason": "Reducing errors is crucial for ensuring the system's reliability and user trust.",
+                "Threshold_Impact": 0.9,
+                "threshold_reason": "A high threshold ensures significant error reduction, validating system reliability."
+            },
+            {
+                "metric_name": "Customer Satisfaction Index",
+                "metric_description": "Assesses customer feedback on the system's ability to address their needs quickly and accurately.",
+                "validation_steps": "Conduct surveys or collect feedback from customers using the system.",
+                "justification_reason": "Ensures the system is positively impacting customer experience, a key outcome of improved response time and documentation.",
+                "category": "Trustworthy",
+                "category_reason": "This metric evaluates the system's impact on user satisfaction and trust.",
+                "applicability": "Medium",
+                "applicability_reason": "Important for understanding user experience but not directly tied to system functionality.",
+                "Threshold_Impact": 0.8,
+                "threshold_reason": "A moderate threshold ensures the system meets user expectations without overburdening resources."
+            },
+            {
+                "metric_name": "Call Summarization Completeness",
+                "metric_description": "Tracks whether all key points from customer calls are captured in the summaries.",
+                "validation_steps": "Compare system-generated summaries with actual call transcripts to ensure completeness.",
+                "justification_reason": "Ensures the system provides comprehensive summaries, avoiding missed information.",
+                "category": "Model Quality",
+                "category_reason": "This metric evaluates the system's ability to capture all relevant details.",
+                "applicability": "High",
+                "applicability_reason": "Critical for ensuring the system delivers complete and useful summaries.",
+                "Threshold_Impact": 0.9,
+                "threshold_reason": "A high threshold ensures comprehensive summaries, meeting user needs."
+            },
+            {
+                "metric_name": "Data Validity Check",
+                "metric_description": "Verifies that the data in the summaries aligns with the actual customer requests.",
+                "validation_steps": "Cross-check summaries with original customer requests to ensure alignment.",
+                "justification_reason": "Ensures the system produces valid and trustworthy documentation.",
+                "category": "Trustworthy",
+                "category_reason": "This metric ensures the system's outputs are accurate and reliable.",
+                "applicability": "High",
+                "applicability_reason": "Critical for maintaining trust and compliance with data accuracy standards.",
+                "Threshold_Impact": 0.95,
+                "threshold_reason": "A high threshold ensures the validity of data, maintaining system reliability."
+            },
+            {
+                "metric_name": "Scalability Assessment",
+                "metric_description": "Evaluates the system's ability to handle increased call volumes without compromising performance.",
+                "validation_steps": "Test the system under varying call volumes to measure performance consistency.",
+                "justification_reason": "Ensures the system can maintain efficiency and accuracy as demand grows.",
+                "category": "Model Quality",
+                "category_reason": "This metric evaluates the system's ability to scale effectively.",
+                "applicability": "Medium",
+                "applicability_reason": "Important for future scalability but not critical for initial functionality.",
+                "Threshold_Impact": 0.85,
+                "threshold_reason": "A moderate threshold ensures the system can handle increased demand without significant performance drops."
+            },
+            {
+                "metric_name": "Groundtruth Similarity",
+                "metric_description": "Compares the system-generated summaries with expected summaries to measure alignment.",
+                "validation_steps": "Compare system outputs with predefined groundtruth summaries for accuracy.",
+                "justification_reason": "Validates the system's ability to produce accurate outputs that match expectations.",
+                "category": "Model Quality",
+                "category_reason": "This metric ensures the system's outputs align with expected results.",
+                "applicability": "High",
+                "applicability_reason": "Critical for ensuring the system meets predefined accuracy standards.",
+                "Threshold_Impact": 0.9,
+                "threshold_reason": "A high threshold ensures strong alignment with expected outputs."
+            },
+            {
+                "metric_name": "Instruction Handling",
+                "metric_description": "Assesses how well the system adheres to predefined rules for summarizing calls and documenting requests.",
+                "validation_steps": "Test the system with various predefined instructions and check adherence.",
+                "justification_reason": "Ensures the system follows instructions to produce consistent and reliable outputs.",
+                "category": "Model Quality",
+                "category_reason": "This metric evaluates the system's ability to follow rules and produce consistent outputs.",
+                "applicability": "High",
+                "applicability_reason": "Critical for ensuring the system operates as intended.",
+                "Threshold_Impact": 0.9,
+                "threshold_reason": "A high threshold ensures adherence to instructions, maintaining output reliability."
+            }
+        ],
+        "augmentations": [
+            {
+                "augment_name": "Background Noise",
+                "augment_description": "Add environmental noise, such as chatter or traffic, to simulate real-world audio conditions.",
+                "augment_example": [
+                    "Original: The customer requested a refund for a delayed flight.",
+                    "Augmented: The customer requested a refund for a delayed flight. (with background chatter added)",
+                    "Parameter: Added background noise to simulate a busy call center environment."
+                ],
+                "justification_reason": "This tests the system's ability to accurately summarize calls even in noisy environments, ensuring robustness in real-world scenarios.",
+                "applicability": "High",
+                "applicability_reason": "Background noise is critical for testing real-world scenarios, especially in call centers where noise is common."
+            },
+            {
+                "augment_name": "Pauses (sentence, word, random)",
+                "augment_description": "Insert pauses at different points (sentence, word, or random) to create natural speech rhythms.",
+                "augment_example": [
+                    "Original: I need help with my account settings.",
+                    "Augmented: I... need help... with my account settings.",
+                    "Parameter: Introduced random pauses to simulate natural speech hesitations."
+                ],
+                "justification_reason": "This ensures the system can handle natural speech patterns, including hesitations or breaks, without losing accuracy in summarization.",
+                "applicability": "High",
+                "applicability_reason": "Pauses are common in natural speech and critical for ensuring the system's ability to handle real-world conversations."
+            },
+            {
+                "augment_name": "Low & High Pitch",
+                "augment_description": "Change the tone of speech, either raising or lowering the pitch.",
+                "augment_example": [
+                    "Original: Can you please check my order status?",
+                    "Augmented: Can you please check my order status? (with a higher pitch applied)",
+                    "Parameter: Adjusted pitch to simulate a higher voice tone."
+                ],
+                "justification_reason": "This tests the system's ability to process and summarize calls from speakers with varying voice tones, ensuring inclusivity and accuracy.",
+                "applicability": "Medium",
+                "applicability_reason": "Pitch variations are moderately relevant for inclusivity but less critical for core functionality."
+            },
+            {
+                "augment_name": "Time Mask",
+                "augment_description": "Temporarily mute parts of the audio to simulate missing sections or gaps in speech.",
+                "augment_example": [
+                    "Original: The customer wants to cancel their subscription due to high costs.",
+                    "Augmented: The customer wants to... their subscription due to high costs.",
+                    "Parameter: Muted a portion of the audio to simulate missing speech."
+                ],
+                "justification_reason": "This evaluates the system's ability to handle incomplete or interrupted audio and still provide accurate summaries.",
+                "applicability": "High",
+                "applicability_reason": "Handling incomplete audio is critical for ensuring the system's robustness in real-world scenarios."
+            },
+            {
+                "augment_name": "Gaussian Noise",
+                "augment_description": "Add random noise to the audio to simulate poor recording quality or interference.",
+                "augment_example": [
+                    "Original: I need assistance with resetting my password.",
+                    "Augmented: I need assistance with resetting my password. (with static noise added)",
+                    "Parameter: Introduced Gaussian noise to simulate poor audio quality."
+                ],
+                "justification_reason": "This ensures the system can handle audio distortions and still accurately document customer requests.",
+                "applicability": "High",
+                "applicability_reason": "Gaussian noise is highly relevant for testing the system's ability to handle poor audio quality."
+            },
+            {
+                "augment_name": "Slow & Fast Speech",
+                "augment_description": "Alter the speed of speech, either slowing it down or speeding it up.",
+                "augment_example": [
+                    "Original: Can you help me with my booking?",
+                    "Augmented: Can you help me with my booking? (spoken faster)",
+                    "Parameter: Adjusted speech speed to simulate varying speaking speeds."
+                ],
+                "justification_reason": "This tests the system's ability to process calls from speakers with varying speaking speeds, ensuring adaptability.",
+                "applicability": "High",
+                "applicability_reason": "Speech speed variations are critical for ensuring the system's adaptability to diverse user interactions."
+            },
+            {
+                "augment_name": "Trim",
+                "augment_description": "Cut off portions of the speech to simulate incomplete or abrupt audio segments.",
+                "augment_example": [
+                    "Original: I need to check my flight status.",
+                    "Augmented: I need to check...",
+                    "Parameter: Trimmed the audio to simulate an abrupt ending."
+                ],
+                "justification_reason": "This evaluates the system's ability to summarize calls with incomplete information.",
+                "applicability": "High",
+                "applicability_reason": "Trimming is critical for testing the system's ability to handle incomplete or abrupt audio inputs."
+            },
+            {
+                "augment_name": "Induce PII",
+                "augment_description": "Include personally identifiable information in the text to assess privacy and security risks.",
+                "augment_example": [
+                    "Original: My name is John Doe, and I need help with my account.",
+                    "Augmented: My name is John Doe, and I need help with my account. (PII included)",
+                    "Parameter: Added PII to test privacy compliance."
+                ],
+                "justification_reason": "This ensures the system adheres to data protection laws like GDPR by identifying and masking sensitive information.",
+                "applicability": "High",
+                "applicability_reason": "PII handling is critical for compliance with privacy laws and ensuring data security."
+            },
+            {
+                "augment_name": "Tone",
+                "augment_description": "Alter the emotional tone of the speech, such as happy, sad, or neutral.",
+                "augment_example": [
+                    "Original: I need help with my booking.",
+                    "Augmented: I need help with my booking. (spoken in a sad tone)",
+                    "Parameter: Adjusted tone to simulate emotional variation."
+                ],
+                "justification_reason": "This tests the system's ability to accurately summarize calls with varying emotional tones, ensuring empathy and understanding.",
+                "applicability": "Medium",
+                "applicability_reason": "Tone variations are moderately relevant for testing empathy but less critical for core functionality."
+            },
+            {
+                "augment_name": "Repetition",
+                "augment_description": "Repeat certain words or phrases to simulate redundancy.",
+                "augment_example": [
+                    "Original: I need help with my account.",
+                    "Augmented: I need help, help with my account.",
+                    "Parameter: Repeated words to simulate redundancy."
+                ],
+                "justification_reason": "This ensures the system can handle repetitive speech patterns without compromising the accuracy of summaries.",
+                "applicability": "Medium",
+                "applicability_reason": "Repetition is moderately relevant for testing the system's ability to handle redundant speech patterns."
+            }
+        ],
+        "fast_principles": [
+            {
+                "principle_name": "Fair & Inclusive - Minimize biases",
+                "principle_desc": "Take steps to identify and address risks of inequities, unacceptable biases, or lack of inclusivity in AI systems.",
+                "principle_guide": "Ensure the dataset is representative, reliable, and relevant, excluding discriminatory features.",
+                "principle_reason": "The system must ensure that the summarization and documentation processes are free from biases that could lead to unfair or inaccurate representation of customer requests. This ensures equitable treatment of all users.",
+                "applicability": "High",
+                "applicability_reason": "Bias in summarization or documentation could lead to misrepresentation of customer needs, impacting user trust and system reliability."
+            },
+            {
+                "principle_name": "Accountability - Establish an end-to-end AI lifecycle strategy",
+                "principle_desc": "Document and maintain information about how the AI system has been developed, tested, and performs during its lifecycle.",
+                "principle_guide": "Establish a robust documentation process to ensure traceability of AI systems development, testing, and performance.",
+                "principle_reason": "Accurate documentation of customer requests requires a well-documented AI lifecycle strategy to ensure traceability and accountability for system outputs.",
+                "applicability": "High",
+                "applicability_reason": "Traceability is critical to ensure the system's outputs are reliable and can be audited for compliance and performance."
+            },
+            {
+                "principle_name": "Safe, Secure & Privacy Enhancement - Design for safety, security, and privacy",
+                "principle_desc": "Consider safety, security, and privacy risks throughout the AI lifecycle.",
+                "principle_guide": "Define and document AI system intended use case(s) when defining system requirements.",
+                "principle_reason": "The system must ensure that customer data is handled securely and that privacy is maintained while summarizing calls and documenting requests.",
+                "applicability": "High",
+                "applicability_reason": "Handling customer data without proper safety and privacy measures could lead to data breaches or misuse, impacting user trust and compliance."
+            },
+            {
+                "principle_name": "Transparent & Explainable - Design for transparency",
+                "principle_desc": "Design features to help users understand how the AI system works, interpret its functionality, and comprehend its strengths and limitations.",
+                "principle_guide": "Incorporate UX design features that communicate system limitations to the end-user as well as affected users.",
+                "principle_reason": "Transparency in how the system summarizes calls and documents requests ensures users can trust and understand the system's outputs.",
+                "applicability": "Medium",
+                "applicability_reason": "While transparency is important for user trust, it is not as critical as safety, privacy, and bias mitigation in this context."
             }
         ]
     }
