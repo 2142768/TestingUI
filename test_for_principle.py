@@ -19,7 +19,7 @@ def initialize_chat_model(temperature=0.0):
 def principles_summarization_prompt(json_data):
     prompt = f"""
 
-              You are an AI expert in compliance and responsible AI assurance. Your task is to analyze the provided {json_data} containing multiple `fast_principles` entries and produce a consolidated list by merging duplicate entries while retaining unique ones. Duplicates are entries with the same `principle_name` or highly similar `principle_desc` or `principle_guide` in terms of intent, purpose, or ethical goal (e.g., both address fairness, transparency, or privacy). The output must account for all input entries, either by merging duplicates or retaining unique entries.
+             You are an AI expert in compliance and responsible AI assurance. Your task is to analyze the provided {json_data} containing multiple `fast_principles` entries and produce a consolidated list by merging duplicate entries while retaining unique ones. Duplicates are entries with the same `principle_name` or highly similar `principle_desc` or `principle_guide` in terms of intent, purpose, or ethical goal (e.g., both address fairness, transparency, or privacy). The output must account for all input entries, either by merging duplicates or retaining unique entries.
 
               **Merging Duplicates**:
               For entries identified as duplicates, merge them into a single entry with:
@@ -27,12 +27,10 @@ def principles_summarization_prompt(json_data):
               - **Merged Principle Description**: Integrate `principle_desc` entries into a cohesive summary, preserving all critical details without redundancy.
               - **Merged Principle Guide**: Combine `principle_guide` entries into a unified set of best practices, ensuring no essential steps are omitted.
               - **Principle Reason**: Combine the original `principle_reason` entries, explaining their original purposes and including a clear rationale for merging based on shared intent, purpose, or ethical goal.
-              - **Applicability**: Select the highest applicability level or justify a new level based on the merged scope.
-              - **Applicability Reason**: Combine `applicability_reason` entries, ensuring alignment with the merged principle’s purpose.
-              - **Combine Reason**: Explicitly state why the entries are duplicates, focusing on their shared intent, purpose, or ethical goal (e.g., both address fairness or transparency).
+              
 
               **Retaining Unique Entries**:
-              For entries that are unique (not duplicates or highly similar), retain them in their original form, preserving all fields (`principle_name`, `principle_desc`, `principle_guide`, `principle_reason`, `applicability`, `applicability_reason`) without modification.
+              For entries that are unique (not duplicates or highly similar), retain them in their original form, preserving all fields (`principle_name`, `principle_desc`, `principle_guide`, `principle_reason`) without modification.
 
               **Validation**:
               - Ensure all input entries are accounted for in the output, either as part of a merged entry or as a unique entry.
@@ -45,13 +43,11 @@ def principles_summarization_prompt(json_data):
               - For unique entries, retain the original structure without a `combine_reason` field.
               - Ensure the output contains exactly the number of entries resulting from merging duplicates and retaining unique ones, with no entries omitted.
               - Return only the final JSON output with no additional explanations or text.
-        
+
               **Notes**:
               - Prioritize clarity, conciseness, and completeness in merged descriptions, guides, and reasons.
-              - If applicability levels differ in merged entries, choose the highest or justify a new level.
               - Explicitly validate that no input entry is omitted or incorrectly merged.
               - Focus on ethical and design objectives, ensuring merged entries reflect the shared intent of the principles.
-
 
 
     """
