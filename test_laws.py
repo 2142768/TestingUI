@@ -24,16 +24,14 @@ def laws_summarization_prompt(json_data):
           **Merging Duplicates**:
           For entries identified as duplicates, merge them into a single entry with:
           - **Merged Law**: The common `law` of the merged entries.
-          - **Merged Article**: Combine the article numbers (e.g., "Articles 9 and 13") or select the most representative article if they serve the same purpose.
+          - **Merged Article**: Combine the article numbers or select the most representative article if they serve the same purpose.
           - **Merged Title**: Create a combined title that reflects the shared intent or select the most descriptive title.
           - **Merged Description**: Integrate descriptions into a cohesive summary, preserving all critical details without redundancy.
           - **Reason**: Combine the original reasons, explaining their original purposes and including a clear rationale for merging based on shared intent, purpose, or compliance goal.
-          - **Applicability**: Select the highest applicability level or justify a new level based on the merged scope.
-          - **Applicability Reason**: Combine      Combine applicability reasons, ensuring alignment with the merged entry’s purpose.
-          - **Combine Reason**: Explicitly state why the entries are duplicates, focusing on their shared intent, purpose, or compliance goal (e.g., both address transparency or data protection).
+         
 
           **Retaining Unique Entries**:
-          For entries that are unique (not duplicates or highly similar), retain them in their original form, preserving all fields (`law`, `article`, `title`, `description`, `reason`, `applicability`, `applicability_reason`) without modification.
+          For entries that are unique (not duplicates or highly similar), retain them in their original form, preserving all fields (`law`, `article`, `title`, `description`, `reason`) without modification.
 
           **Validation**:
           - Ensure all input entries are accounted for in the output, either as part of a merged entry or as a unique entry.
@@ -42,15 +40,12 @@ def laws_summarization_prompt(json_data):
 
           **Output Format**:
           - Return a JSON array containing all entries (merged and unique).
-          - For merged entries, include a `combine_reason` field to explain the merger.
-          - For unique entries, retain the original structure without a `combine_reason` field.
           - Ensure the output contains exactly the number of entries resulting from merging duplicates and retaining unique ones, with no entries omitted.
           - Return only the final JSON output with no additional explanations or text.
           - Make sure it contain all the article laws from the input given.
 
           **Notes**:
           - Prioritize clarity, conciseness, and completeness in merged descriptions, titles, and reasons.
-          - If applicability levels differ in merged entries, choose the highest or justify a new level.
           - Explicitly validate that no input entry is omitted or incorrectly merged.
           - Focus on legal and compliance objectives, ensuring merged entries reflect the shared regulatory intent.
 
