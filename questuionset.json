@@ -1,0 +1,122 @@
+[
+    {
+        "question": "Can you briefly describe your applications functionality?",
+        "answer": "The system records travel agency calls, transcribes them, and uses Generative AI to extract key details, providing structured summaries for agents and customers.",
+        "category": "general",
+        "sub_category": "general",
+        "question_no": 4,
+        "status": "valid",
+        "follow_up_status": "False",
+        "identifier": "text"
+    },
+    {
+        "question": "Is it a voice/text chat?",
+        "answer": "It is an unstructured plain text interaction where queries are typed on a web interface.",
+        "category": "general",
+        "sub_category": "general",
+        "question_no": 6,
+        "follow_up_question": "What specific input formats or channels does the text chat system support (e.g., plain text, attachments, structured forms), and how do users interact with it (e.g., via a web interface, mobile app, or other platforms)?",
+        "follow_up_status": "True",
+        "identifier": "text"
+    },
+    {
+        "question": "What problem it aims to solve?",
+        "answer": "The system eliminates manual effort in summarizing calls, improves response time, and ensures accurate documentation of customer requests",
+        "category": "general",
+        "sub_category": "general",
+        "question_no": 7,
+        "status": "valid",
+        "follow_up_status": "False",
+        "identifier": "text"
+    },
+    {
+        "question": "Who are the main users of your system?",
+        "answer": "The primary users include travel agents (who need quick access to summaries), customer support teams, and supervisors for quality assurance",
+        "category": "general",
+        "sub_category": "general",
+        "question_no": 8,
+        "status": "valid",
+        "follow_up_status": "False",
+        "identifier": "text"
+    },
+    {
+        "question": "What risks or unintended consequences could arise if the system fails or is misused?",
+        "answer": "Risks include incorrect or incomplete summaries, potential miscommunication leading to wrong bookings, and loss of critical customer details",
+        "category": "general",
+        "sub_category": "general",
+        "question_no": 9,
+        "status": "valid",
+        "follow_up_status": "False",
+        "identifier": "text"
+    },
+    {
+        "question": "Where the system can likely be fair or baised?",
+        "answer": "Bias may occur in how AI interprets customer priorities, such as favoring specific keywords or overlooking regional differences in communication. To ensure fairness, the system uses diverse training data to address biases in voice, text, and image inputs, while applying age-specific rules and maintaining gender balance in decision-making",
+        "category": "general",
+        "sub_category": "general",
+        "question_no": 10,
+        "status": "valid",
+        "follow_up_status": "False",
+        "identifier": "text"
+    },
+    {
+        "question": "How is the system designed to be interpretable (e.g. display of rationale/reason/context used)",
+        "answer": "The system provides call transcripts, highlights extracted key points, and allows users to trace summaries back to original conversations for validation",
+        "category": "general",
+        "sub_category": "general",
+        "question_no": 11,
+        "status": "valid",
+        "follow_up_status": "False",
+        "identifier": "text"
+    },
+    {
+        "question": "What types of data does your system process?",
+        "answer": "The system processes call transcripts and does not handle other types of data.",
+        "category": "general",
+        "sub_category": "general",
+        "question_no": 12,
+        "follow_up_question": "Can you clarify whether your system processes additional data types beyond call transcripts, such as audio recordings, metadata (e.g., timestamps, caller ID, or location), and how each type of data is stored, anonymized, and secured?",
+        "follow_up_status": "True",
+        "identifier": "text"
+    },
+    {
+        "question": "Do you have guardrails to filter harmful language ? What are your implicit/explicit requirements on guardrails ?",
+        "answer": "The system has automatic detection for offensive or sensitive language, flagging inappropriate content for review.",
+        "category": "general",
+        "sub_category": "general",
+        "question_no": 13,
+        "follow_up_question": "What specific criteria or thresholds does your system use to detect and flag harmful language, and how is flagged content managed in real-time to ensure compliance with guardrail requirements?",
+        "follow_up_status": "True",
+        "identifier": "text"
+    },
+    {
+        "question": "Is there a mechanism for manual intervention when booking decisions are ambiguous? ",
+        "answer": "Yes, agents can review flagged summaries, manually correct misinterpretations, and override AI-generated summaries when needed.",
+        "category": "general",
+        "sub_category": "general",
+        "question_no": 14,
+        "status": "valid",
+        "follow_up_status": "False",
+        "identifier": "text"
+    },
+    {
+        "question": "Specific age/gender guidelines?",
+        "answer": "No",
+        "category": "general",
+        "sub_category": "general",
+        "question_no": 15,
+        "follow_up_question": "Can you clarify whether there are any age or gender-specific requirements that influence the design of the interface, such as adjustments to voice tone, language style, or compliance measures like COPPA? If none exist, please confirm explicitly.",
+        "follow_up_status": "True",
+        "identifier": "text"
+    },
+    {
+        "question": "Do you have a process to continuously monitor performance and address unexpected outcomes?",
+        "answer": "A process is in place to monitor performance and address unexpected outcomes. Feedback is collected and reviewed offline by the business team, who analyze flagged summaries, correct misinterpretations, and override AI-generated outputs when necessary. Metrics on accuracy and hallucination are used to identify anomalies, and statistical models help measure these rates. The system is refined through data-driven adjustments and model fine-tuning based on the analysis.",
+        "category": "general",
+        "sub_category": "general",
+        "question_no": 16,
+        "follow_up_question": "Can you elaborate on how the feedback collected is systematically analyzed and integrated into the monitoring process to improve the AI's performance, including details on the specific mechanisms or metrics used to evaluate and address quality issues?",
+        "follow_up_status": "True",
+        "identifier": "text"
+    }
+]
