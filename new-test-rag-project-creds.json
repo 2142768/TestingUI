@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "new-test-rag-project",
+  "private_key_id": "dc822ec4a77bfc53a34f890b123b9cb09aac00a8",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDCCY9D5bMWp32S\nJf5IrqQBaLtUV1q4HxRzqNXe8yvS7HaOv3vnJ298kLILiD7FFU+g4j8hr/1rjjOM\nSHSGWVXt0FQfGqS4H2DEyVdQriA25aCjUHD/VJe+APOHYL5pLcB0+UBRhsQIDfbc\nHQdT9dlNmpZqJuQflF8LdNh55IP623gZzZnE63b9oupdMjrq88Duj0jmCsOYXMpv\naKFFTuEuT06iBE6PoFnZVda0sY0PFCBLZ/Rq1+pjS/pnLvlnfqylVN7bBRN7WtE3\nOyctALdiwKRmutbZXLuLErQYWuRAxhC0doBcyjkFdE+DI2KmGKhcqbfKIE4U0kVU\nHILg7tfxAgMBAAECggEABFKmUwHbPd0mxXaUWgIOiDPBLyeIT09tcydy9tXp7ze6\nizL5x6BDugWm+s3q8JT5Rn094PIw2hhjnnungW38dakxU5VST8IOs8mkyOjNMc3n\nOJY4Yz7bJ9Xxdv3VNiaJWe3K5JoVFFUbz6LzrKeesw13bgdeaBP0E18zurD4LgKz\nXMz27Nlx/OVnXzP5qwgzlNsY33E9B5xunussMEAAjg4RQKlDQ8TOA2P6vujnDJ9J\nYYwkAj83A5Ekq2lY3SUX5CNE5R8oMEOBgGopXdxlMm3XW755URchkaxJ2E8XPU7c\ne5r1QJG4PG3lTjENqrpJ+iQGKXaTcyGFsUk4ZP4doQKBgQDyTMQuPMKv1ShTzDGS\nmZSStL0sLh781cNazN7/XCB+I7+SNU/ritwnuBDN74VipbIII0qCtlHxMhNcnGfJ\nBrdFyDZLVphAIxpmfisBmTIq+Twwq7TgortihjXnzXlLzSnmfUxRW1oxPEGI4W3L\nbFOm+E/d8+yKosPJ7B5eUMAP0QKBgQDNAjRe0eCiXZdqqL5Q2Kpj7FA0JAGngtxf\nlcY/J/NYGw3sXE7hfs8rqcIcoqY9JW/QUgQqBhpABaJCD3Zui/DUTxeJAWABLQT2\n9gHXLUF1ndZTse9ueJC6jO+7JbuBp2STmQBIGHz2bz1G2hqyNfmGs+XmxRkjhpNf\ngb0KPJFuIQKBgFp81ssZv+9goKXi3SSNnJHJU9ibBNGRl1pipmkhY7UX7qRQqp8h\nhaSDtiriZ6L2lG07mMkGA8Ya2GY+tve5PVqfMb+jAEr7kRFzzuXS64xm9daLWYqG\n24oo6xq9fq4TWbGNW6IKhr1abnMLFTDiLL9vfow6Wz1PGeVf+9tnNsLxAoGBAKT8\nvDb/Q4CIP9631QpthJuMSHPd8nLkbwSCHh0fwsjKZScultEFZCdopG61O4KESXtn\nNjC33pJdtlrh5NdMylGjIXbCY4guugsiqxKIOmE02JNc5SuL3jY0TI7Z7BCJLflX\nLhHXm2Ic3jzSNJ/trlaJG2Hgh72+hYZcfE3rtsLhAoGAJ2U4NwWorLW76l7C1D1s\n+TdVjEpFAWWZbJnLue0KP6Oqbjs0yg/iWlPm7DUkXDznwiHRLDVfNmcO5SPFJWCS\nZns29lL9+gnq7sj4t0BakYVXsT6Bp04jC3keMor2djUpY9Q0ixuvzQIqjqVrXkQR\nJ24vRTSlMXzCyw1U/NusP0Y=\n-----END PRIVATE KEY-----\n",
+  "client_email": "new-rag-test-service-account@new-test-rag-project.iam.gserviceaccount.com",
+  "client_id": "100107834398445125385",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/new-rag-test-service-account%40new-test-rag-project.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
