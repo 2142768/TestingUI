@@ -1,0 +1,32 @@
+Q4: Can you briefly describe your application's functionality?
+A: It summarizes customer support calls in the travel and hospitality sector.
+
+Q7: What problem does it aim to solve?
+A: It reduces manual effort and time spent reviewing long customer calls.
+
+Q8: Who are the main users of your system?
+A: Travel agents, customer support teams, and quality assurance managers.
+
+Q9: What risks or unintended consequences could arise?
+A: Misinterpreting customer intent or summarizing with missing key info.
+
+Q10: Where can the system likely be fair or biased?
+A: It might misrepresent accents or ignore concerns from non-native speakers.
+
+Q11: How is the system designed to be interpretable?
+A: Summaries include key points and link back to the original call snippet.
+
+Q12: What types of data does your system process?
+A: It processes audio transcripts of customer support calls.
+
+Q13: Do you have guardrails to filter harmful language?
+A: Yes, harmful or offensive language is flagged and excluded from summaries.
+
+Q14: Is there a mechanism for manual intervention when system fails?
+A: Yes, reviewers can edit or override any generated summary.
+
+Q15: Do you have a process to continuously monitor and improve?
+A: Yes, feedback is regularly collected to improve summarization quality.
+
+Q16: Is there any specific age/gender guideline to consider?
+A: No, it's designed to be neutral regardless of age or gender.
